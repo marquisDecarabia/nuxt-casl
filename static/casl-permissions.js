@@ -14,7 +14,7 @@ export const CASLPermissions = (user) =>
       can('delete', 'ProjectUsers')
     }
     if (user.PROJECT_VIEW_SECTION) {
-      can('viewSelf', 'ProjectSection') // но только свои если не админ -_-
+      can('viewSelf', 'ProjectSection')
     }
     if (user.PROJECT_WORK_TASK) {
       can('add', 'ProjectTasks')
@@ -22,13 +22,10 @@ export const CASLPermissions = (user) =>
       can('delete', 'ProjectTasks')
     }
     if (user.PROJECT_EDIT_MIN_TASK) {
-      can('editMin', 'ProjectTasks') // статус и затраченное время только
+      can('editMin', 'ProjectTasks')
     }
     if (user.PROJECT_SELF_TASK) {
-      can('viewSelf', 'ProjectTasks') // свои задачи
-    }
-    if (user.PROJECT_GANT) {
-      can('view', 'GanttChart')
+      can('viewSelf', 'ProjectTasks')
     }
     if (user.ADD_USER) {
       can('add', 'ProjectUsers')
